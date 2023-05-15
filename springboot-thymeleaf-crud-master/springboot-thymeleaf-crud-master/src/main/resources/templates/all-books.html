@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vans Shoes Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+ 
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="data:image/jpeg;base64,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"
+          height="35"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/add">Add Shoes</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+   
+     
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+	</header>
+	<style>
+		body {
+			 background-image: url('https://i.pinimg.com/originals/f1/ed/a4/f1eda4768df8d8135c779772f2833e88.gif');
+			  height: 100vh; background-size: cover; background-repeat: no-repeat;
+		}
+		
+	</style>
+	
+
+    <div class="container my-2">	
+    <div class="card">
+    <div class="card-body">
+		
+        <div th:switch="${books}" class="container my-5">
+            <p class="my-5">
+                
+            </p>
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                 <table class="table table-bordered">
+  					<thead>
+                            <tr>
+                                <th>Shoe Brand</th>
+                                <th>Author</th>
+                                <th>No Of Pages</th>
+                                <th>Publication</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="book : ${books}">
+                                <td th:text="${book.name}"></td>
+                                <td th:text="${book.author}"></td>
+                                <td th:text="${book.noOfPages}"></td>
+                                  <td th:text="${book.publication}"></td>
+                                <td>
+                                    <a th:href="@{/edit/{id}(id=${book.id})}"
+                                             class="btn btn-primary">
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/delete/{id}(id=${book.id})}"
+                                              class="btn btn-primary">
+                                        <i class="fas fa-user-times ml-2"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+ 
+</html>
